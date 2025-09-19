@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    
+    <script>
+         //  user inputs for 5 subjects
+            let Telugu=parseInt(prompt("Enter marks of Telugu"));
+            let Hindi=parseInt(prompt("Enter marks of Hindi"));
+            let English=parseInt(prompt("Enter marks of English"));
+            let Mathematics=parseInt(prompt("Enter marks of Mathematics"));
+            let Science=parseInt(prompt("Enter marks of science"));
+            // average marks
+            const averagemarks = (Telugu+ Hindi+ English+ Mathematics + Science) / 5;
+         // avg grade
+           let grade;
+            if (averagemarks>=90) {
+                grade = "A+";
+            } 
+            else if (averagemarks>=80&&averagemarks<90) {
+                grade = "A";
+            } 
+            else if (averagemarks>=70&&averagemarks<80) {
+                grade = "B";
+            } 
+            else if (averagemarks>=60&&averagemarks<70) {
+                grade = "C";
+            } 
+            else if (averagemarks>=50&&averagemarks<60) {
+                grade = "D";
+            }
+            else if(averagemarks<50)
+            {
+                grade = "F";
+            }
+            else{(Telugu==NaN||Hindi==NaN||Mathematics==NaN||English==NaN||Science==NaN) 
+                alert("Please enter valid marks for all subjects");
+            }
+            alert("Your grade is:"+ grade);
+        
+    </script>
+</body>
+</html>

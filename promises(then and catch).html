@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+<body>
+    <h2>promises</h2>
+    <script>
+        //resolve
+       let p1 = new Promise((resolve,reject)=>{        //by using new keyword we will declare promises
+                setTimeout(()=>
+                {  console.log("db call successful")
+                    resolve(25),5000}) })     //5000ms=5sec
+                       
+                p1
+                .then((response)=>{
+                    console.log("bye")
+                     })
+                console.log("hi") //after excecuting line 23 then executs line no 18
+                console.log(p1)
+        //reject
+        let p2 = new Promise((resolve,reject)=>{        //by using new keyword we will declare promises
+                setTimeout(()=>
+                {  
+                    console.log("db call not successful")
+                    reject(new Error("db backend failure")),5000}) 
+                })     //5000ms=5sec
+                
+                    p1.catch((error)=>
+                    { 
+                        console.log("error")
+                       })
+                
+    </script>
+</body>
+</html>

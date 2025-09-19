@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENTS</title>
+</head>
+<body>
+<!-- EVENTS:occuring specific task is EVENTS
+AddEventListener:is used to handle some events to a particular element
+removeEventListener:is used to remove eventhandlers to a particular element -->
+
+   <h1 id="head1">please subscribe</h1> 
+   <button id="btn">SUBSCRIBE</button>
+   <!-- example for capture and bubbling(by default false(bubbling).true(capture)) -->
+         <div id="parent">example for capture and bubbling phase(parent event)
+            <p id="child">child event</p>
+         </div>
+         <div id="hover" style="background-color: blue; border: 1px solid black; width: 100px; height: 100px;">
+            box
+         </div>
+
+
+
+   <script>
+         const head1=document.getElementById("head1");
+         const btn=document.getElementById("btn");
+         btn.addEventListener("click",()=>{
+                   head1.innerText="thanks for subscribing";
+                   btn.innerHTML="unsubscribe";
+         })
+        //  btn.removeEventListener("click",()=>{                 //we can see more diff for remove in further
+        //            head1.innerText="thanks for subscribing";
+        //            btn.innerHTML="unsubscribe";
+        //  })
+
+      //bubbling(specific element to parent)          ,capturing( parent to specific element)
+        const parent=document.getElementById("parent");
+        const child=document.getElementById("child",);           
+         parent.addEventListener("click",()=>{
+            alert("parent activated")
+         },true)
+
+         child.addEventListener("click",()=>{
+                    alert("child activated")
+         },true)
+            
+
+         const hover=document.getElementById("hover");
+         
+         hover.addEventListener("mouseover",()=>{
+            hover.style.background="red";
+         })
+         
+         hover.addEventListener("mouseout",()=>{
+            hover.style.background="yellow";
+         })
+
+         
+    </script>
+</body>
+</html>

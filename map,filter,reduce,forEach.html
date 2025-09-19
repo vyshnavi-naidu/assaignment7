@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higher order functions</title>
+</head>
+<body>
+    <h2>higher order function is a function that accepts function as a parameter</h2>
+    <h2>callback:passing function as a parameter,that function is call back function</h2>
+    <p>function fun1(function fun2(){})<br>
+        {<br><br>
+
+        }    <br>
+        fun1 is higher order function <br>
+        fun2 is call back function
+     </p>
+    <script>
+        //MAP:used for trasforming(manipulating) each and every element in a array
+        //SYNTAX:array.map(callback(element,index,array))
+        const arr1=[1,2,3,4,5,6]
+        const double=arr1.map((x)=>x*2)
+        console.log(double)
+
+        //FILTER:filters the array values where condition specified in function is satisfied
+        //syntax same as map
+        //evennum
+        const evennum=arr1.filter((x)=>
+             x%2===0)
+             console.log(evennum)
+        //odd
+        const odd=arr1.filter((x)=>x%2===1)
+         console.log(odd)
+         
+        //REDUCE:this method reduces whole array into single value
+         //SYNTAX:array.reduce(callback(accumulator,current value,index,array),0//0 is intial value to accum)
+         //accum:intial value
+         //sum of array,max,min value
+         //sum
+         const sum=arr1.reduce((accum,curr)=>accum+curr,0)
+         console.log(sum)
+         //max
+         const max=arr1.reduce(function max(max,curr){
+            if(curr>max){
+                max=curr;
+            }
+            return max;},0)
+            console.log(max)
+        //min
+        const min=arr1.reduce(function min(min,curr){
+            if (curr<min){
+                min=curr
+            }
+            return min;
+        },1)//index starts from 1
+        console.log(min)
+        //FOREACH:not executed for empty array,calls function for each and every function
+        //SYNTAX:array.forEach(callback(currentvalue,index,array),thisValue)
+        const output=arr1.forEach((curr,index)=>
+    console.log(`number at index ${index}:${curr}`))
+    </script>
+    
+</body>
+</html> 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>control statements</title>
+</head>
+<body>
+    <h2>Iterative statements(looping)</h2>
+    <script>
+        //iterative:executes blockof code until the condition is true.can reapeat the action more than once.and having atleast one etarative variable and either decrement or increment
+//WHILE:repeats block of code while a condition is true
+    let a=1;
+    while(a<=5){
+        console.log(a);
+        a++;
+    }
+//DO-WHILE
+     let b=5;
+     do{
+        console.log(a);
+        a++;
+     }
+     while(b<=10)  //if while condition is true repeats block of code execution then only once it will execute
+
+//FOR:repeats block of code specific no.of times
+    for(let c=1;c<=5;c++) {
+         console.log(c);
+    }
+
+//FOR-IN:used for non-iterative things like object
+    const  personDetails={ name:'vyshu',age:24,stydy:'b.tech',Gender:"female"};  //object
+    for(z in personDetails){      
+        //console.log(z);                //Z gives variables like name,age etc
+        console.log(personDetails[z]);    //gives variable values like vyshu,24 etc
+        }
+//FOR-OF:used for iterative things like array
+     const students=["vyshu","kalpana","latha","bhavani"];    //array
+     for(z of students){
+        console.log(z);
+     }
+    </script>
+
+</body>
+</html>

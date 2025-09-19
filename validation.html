@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <form>
+      <div>  
+        <label for="Name">Name</label>
+        <input type="text" name="Name" id="Name">
+      </div>
+      <div> 
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    
+    </div>
+    <div> 
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        
+    </div>
+    <div> 
+        <label for="phonenumber">Phonenumber</label>
+        <input type="number" name="phonenumber" id="phonenumber">
+        
+    </div> 
+    <div> 
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
+    </div> 
+    <div>  
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" id="female">female
+        <input type="radio" name="gender" id="male">male
+        <div id="gendererr"></div>
+    </div>
+    <div>
+        <label for="skills">Skills</label>
+        <input type="checkbox" value="c" name="skills" id="c">C
+        <input type="checkbox" value="c++" name="skills" id="c++">C++
+        <input type="checkbox" value="java" name="skills" id="java">Java
+        <input type="checkbox" value="mern" name="skills" id="mern">MERN
+        <input type="checkbox" value="python" name="skills" id="python">Python
+        <div id="skillserr"> </div>
+    </div>
+       <button type="click" id="btn">submit</button>
+    </form>
+
+    <script>
+        // function validateform()
+        // {
+        //           const name=document.getElementById("name").value
+        //           const email=document.getElementById("email").value
+        //           const password=document.getElementById("password").value
+        //           const phonenumber=document.getElementById("phonenumber").value
+        //           const age=document.getElementById("age").value
+        //           const gender=document.querySelector("input[name='gender']:checked")
+        //           const skills=document.querySelectorAll("input[name='skills':checked]")
+        //           const nameerr=document.getElementById("nameerr").value
+        //           const emailerr=document.getElementById("emailerr").value
+        //           const passworderr=document.getElementById("passworderr").value
+        //           const phonenumbererr=document.getElementById("phonenumbererr").value
+        //           const ageerr=document.getElementById("ageerr").value
+        //           const gendererr=document.getElementById("gendererr")
+        //           const skillserr=document.getElementById("skillserr")
+        //           let valid=true
+        //           if(!name){
+        //             valid=flase
+        //             nameerr.innerText="please enter your name"
+        //           }
+        //           else{
+        //             valid=true
+        //           }
+
+        // }
+          
+        function validateform(){
+            const name=document.getElementById("Name").value
+            const nameerr=document.getElementById("nameerr")
+            let valid=true
+            if(!name){
+               nameerr=innerText="please enter your name"
+             valid==false
+            }
+            if(valid==false){
+                return flase
+            }
+            else{
+                return true
+            }
+        }
+    </script>
+</body>
+</html>

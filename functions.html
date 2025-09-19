@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <h2>functions</h2>
+    <script>
+        function myFunction(a,b){ 
+//function with RETURN statement,after executing return statement the function will stop executing
+            return a*b
+        }
+       // let x= myFunction(4,3);
+        //console.log(x);       //calling function
+        console.log(myFunction(4,3)); //this is anotherway of calling function
+//FUNCTION WITHOUT RETURN STATEMENT
+        function function2(x,y){
+            console.log(x+y)
+        }
+       //greet function
+        function greet(name){
+        console.log("Hello,"+name);
+       }
+       greet("vyshu");
+//FUNCTION WITHOUT PARAMETERS with RETURN
+       function getCurrentDate(){
+             return new Date();
+       }
+        let year=getCurrentDate();
+        console.log(year);
+//ANONYMOUS FUNCTIONS:func without function name
+    const greethello=function(name){
+        return "hello,"+name+"!";
+    }
+    console.log(greethello("vyshu"));//function call by using variable name
+    </script>
+
+
+</body>
+</html>

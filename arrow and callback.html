@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions</title>
+</head>
+<body>
+    <h2>Arrow functions</h2><script> 
+    let greethello=(name)=>
+    {
+        return "hello,"+name+"!";
+    }
+    console.log(greethello("vyshu"));
+
+    //ex2
+    let num=(x,y)=>{
+        console.log(x+y);  //without return
+    }
+    num(7,6)
+//oddEven
+     let oddEven=(n)=>{
+        if(n%2==0){
+              console.log("even");
+        }
+        else{
+            console.log("odd");
+        }
+     }
+     //call func
+        oddEven(8);
+   // <h2>callback function</h2>
+      //a fun passed aa an argument/parameter to another function is called callback function
+      function callBack(){
+        console.log("callback functions")  //fun1
+      }
+       function sub(x,y,fun1){
+        console.log(x-y);
+        fun1()   //we can also use callBack()
+       }
+       sub(6,4,callBack)
+
+    </script>
+</body>
+</html>

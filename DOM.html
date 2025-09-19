@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <!-- DOM:document object model -->
+    <h1 id="heading1">DOM:document object model</h1>
+    <h1>example for getElementBytagname</h1>
+    <p class="p1">example for getElementByClassname</p>
+    <form>
+        <label for="name">NAME</label>
+        <input type="text" name="name">
+                <input type="text" name="name">
+                        <input type="text" name="name">
+    </form>
+    <div id="div1" style="color: blue;">
+
+    </div>
+     
+     <script> 
+     //getting data from the html page
+     document.writeln("DOM:Document object model");  //writeln gives one space at the end of the string
+     document.write("all HTML elements represented as objects");
+      let elementbyid=document.getElementById("heading1");//id,s are unique so we get directly by id
+      console.log(elementbyid)
+      let elementbytagname=document.getElementsByTagName("h1");//in html we have collection of same tags so, we can get by using array index
+      console.log(elementbytagname[1])
+      let elementbyname=document.getElementsByName("name");//byname used for form
+      console.log(elementbyname)
+      let elementbyclassname=document.getElementsByClassName("p1");//in HTML we have same class names so,we get by using class name as a array we can get these by using index value
+      console.log(elementbyclassname[0])
+       //changing the data 
+      elementbyid.innerText="DOM:DOCUMENT OBJECT MODEL"; //changing the content in heading1 element
+    //inside div1 we are going to another p tag byusing element.innerhtml
+      document.getElementById("div1").innerHTML="<p id='p1'>giving p element inside div</p>"
+      elementbyname[0].setAttribute("placeholder","placeholder by dom");
+      //if we have no.of input tagas we can use looping
+        for(i of elementbyname){
+            i.setAttribute("placeholder","placeholder by dom and looping")
+            //for changing attribute value
+            i.attribute="required"
+         }
+         elementbyid.setAttribute("class","input");//another example for setattribute
+         document.getElementById("div1").style.color="red"
+
+    //creating ,replacing ,apending and deleting elements
+
+    const newele=document.createElement("span");//CREATING AN ELEMENT
+   console.log(newele);
+   newele.setAttribute("id","span1")
+
+    div1.appendChild(newele);     //new ele appended as child to div1
+    newele.innerText="child element content"; //content for child element
+    //creating another element inside span
+    const eleinsideele=document.createElement("a")
+    console.log(eleinsideele)
+    //appending eleinsideele(a) to newele(span)
+    newele.appendChild(eleinsideele)
+    console.log(div1)
+
+         //removing div1 child element <p>
+   const p1= document.getElementById("p1")
+    div1.removeChild(p1)
+         //anotherexample for remove child
+//    const a=document.getElementById("span1")
+//          div1.removeChild(a)
+   
+
+//replacechild
+// const h2=document.createElement("h2");
+//    h2.innerText="example for replace child"
+//    console.log(h2)
+//     span1.replaceChild(h2,eleinsideele)
+        
+//QUERY SELECTORS
+      const queryexample=div1.querySelector("a")
+      console.log(queryexample)
+      const queryexample2=div1.querySelectorAll("p")
+      console.log(queryexample2)
+    const queryexample3=div1.querySelector("#span1")//for id
+      console.log(queryexample3)
+      //for class   .class
+      //QUERYSELECTORALL:for list of elements
+
+
+
+     
+     </script>
+</body>
+</html>

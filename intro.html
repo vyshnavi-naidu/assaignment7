@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro to js</title>
+</head>
+<body>
+    <h2>introduction to js</h2>
+    <script>
+        let a=2;     //let is key word,a,b,c are variables,=,+ are operators,a+b is expression,
+        let b=5;
+        let z='vyshu';
+        let x;
+        let y=123456789009876543456789098765;      //bigint data type
+        let c=a+b;
+        console.log(c);
+        console.log(typeof a)
+        console.log(typeof z)
+        console.log( typeof c)
+        console.log(x)
+        console.log(y)
+        //operators
+        //arthematic operator
+        let p=5;
+        let l=p++;//post increment:p is incremented after assigned ans 5
+        let m=++p;//pre increment:q is incremented before assigning here p=6 then ans=7
+        let q=4;
+        let r=q--;//post decrement:q is decremented after assigned ans 4
+        let s=--q;//pre decrement:q is decremented before assigned here q=3 then decreases to 2
+
+        console.log(p+q);console.log(p-q);console.log(p*q);console.log(p**q);console.log(p/q);console.log(p%q);
+        console.log(l)
+        console.log(m)
+        console.log(r) 
+        console.log(s)
+        //assaignment operator
+        let A=5;
+        let B=7;
+        A=B; 
+        console.log(A);
+        A+=B;//here A is 7
+        console.log(A);
+        A*=B;//here a is 14
+        console.log(A);
+        //logical operator
+         let num1=6;
+         let num2=8;
+        let num3= num1>num2&&num2>num1;//both the cond is true it returns true,then false
+         console.log(num3);
+         let num4 =num1>num2||num2>num1;//if one cond is true it returns true then false
+         console.log(num4);
+         let num5=(num1!=num2);//Logicalnot
+         console.log(num5)
+         //comparison
+         console.log(num1==num2);//== gives only value
+         console.log(num1===num2);//=== compares both value and data type
+         //string 
+         //used for concatenating string
+         let t1="good";
+         let t2="morning";
+         let t3=t1+t2;
+         console.log(t3);
+         //Bitwise operator
+         console.log(num1&num2);
+         console.log(num1^num2);
+         //ternary
+         let num9=9;
+         let num0=10;
+         num9!=num0?console.log("condition true"):console.log("condition false");
+
+         //REFERENCE DATATYPES
+         //object
+         const  personDetails={ name:'vyshu',age:24,stydy:'b.tech'};  //object
+        console.log(personDetails.name)
+        console.log(personDetails.age)
+        personDetails.course='ECE';               //for adding another details to an object
+        console.log(personDetails)
+        //Array
+        const students=["vyshu","kalpana","latha","bhavani"];
+        console.log(students[3])          //indexing starts from 0 to n-1
+        console.log(students.length)      //gives the lenghth of an array
+        console.log(students.length-1)
+        students.push("laxmi");         //for adding item to an array
+        console.log(students[4]);
+    </script>
+    
+</body>
+</html>

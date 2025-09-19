@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data fetching</title>
+</head>
+<body>
+    <h2>fetching data</h2>
+    <ul id="list"></ul>
+    <script>
+        let list=document.getElementById("list")
+
+        async function fetchdummy(){
+           const fetchdata= await fetch('https://dummyjson.com/products?sortBy=title&order=asc')
+           const data= await fetchdata.json()
+           const realdata= data.products
+           console.log(data)
+           show(realdata)
+           }
+        //calling function
+       fetchdummy()
+    
+
+        //displaying data in html page
+        function show(products){
+        products.forEach((product)=>
+           {
+                let li=document.createElement("li")
+                list.appendChild(li)
+                li.innerHTML=`${product.title}`
+            
+            })
+        }
+       
+        
+            
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest&Spread</title>
+</head>
+<body>
+    <h2>spread is operator(syntax:...)</h2>
+    <h2>Rest is parameter(syntax:...)</h2>
+    <script>
+           //spread:helps us to handle iterable arrays and objects
+           //concat,adding ele,copying one object in anorher object
+           //EG1
+           const arr1=[1,2,3,4]
+           const arr2=[5,6,7,8]
+           const arr3=[...arr1,...arr2]
+           console.log(arr3)
+           //EG2
+           const arr4=[...arr1,10]
+           console.log(arr4)
+           //EG3
+           const obj1={name:"vyshu",age:"25"}
+           const obj2={name:"chaitu",age:"4",...obj1}
+           console.log(obj2)
+
+           //Rest is parameter,we can give rest as parameter in a function.it give set of values as a array
+           //must have only one rest para in function
+           function rest(a,b,...c){
+            return a,b,c;
+           }
+           console.log(rest(1,2,3,4,1,5,6,7))
+        
+
+
+    </script>
+    
+</body>
+</html>

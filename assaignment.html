@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validations</title>
+    <!-- styling using css -->
+    <style>
+        h2{
+            display: flex;
+            justify-content: center;
+            color: blueviolet;
+        }
+        #forms{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .star{
+            color: red;
+        }
+         #name{
+            margin:10px ;
+        }
+        #email{
+            margin:10px ;
+        }
+        #password{
+            margin:10px ;
+        }
+        #cp{
+            margin:10px ;
+        }
+        #btn{
+            margin:10px ;
+            background-color: blueviolet;
+        }
+        /* added responsiveness to the page using media queries */
+        @media all and (max-width:600px){
+             h2{
+            display: flex;
+            justify-content: flex-start;
+            color: blueviolet;
+        }
+        #forms{
+            display: flex;
+            flex-direction:column;
+            align-items: flex-start;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        }
+
+         
+
+    </style>
+    
+</head>
+<body>
+    <!-- html page content -->
+    <h2>Form Validations</h2>
+    
+    <form id="forms">
+    
+        <label for="fullname">FullName<span class="star">*</span>:</label>
+        <input type="=text" id="name" >
+
+    
+        <label for="email">Email <span class="star">*</span>:</label>
+        <input type="=text" id="email" > 
+
+     
+        <label for="password">Password <span class="star"></span>:</label>
+        <input type="=text" id="password" >
+
+     
+        <label for="confirmpassword">Confirmpassword<span class="star">*</span>:</label>
+        <input type="=text" id="cp">
+         
+         <span> 
+        <label for="terms" style="margin: 10px;">Accept terms and conditions<span class="star">*</span></label>
+        <input type="checkbox" id="terms"></span>
+
+        <div id='message'></div>
+
+        <button type="submit" id="btn">submit</button>
+<!-- java script  -->
+      <script>
+        let form=document.getElementById("forms")
+        let message=document.getElementById("message")
+        //   adding functionality to submit button
+         form.addEventListener("submit",function(e){
+        e.preventDefault()
+        let fullname=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+        let password=document.getElementById("password").value;
+        let confirmpassword=document.getElementById("cp").value;
+        let terms=document.getElementById("terms").checked;
+
+         if(!fullname||!email||!password||!confirmpassword){
+            message.textContent="please fill the feilds"
+            message.style.color="red"
+            return
+        }
+        else if(email.length<10){
+          message.textContent="please enter valid email id"
+          message.style.color="red"
+          return
+        }
+        else if(password!=confirmpassword||password<10){
+            message.textContent="password and confirm password should be same"
+            message.style.color="red"
+            return
+        }
+        else if(!terms){
+            message.textContent="please accept terms and conditions"
+            message.style.color="red"
+            return
+        }
+        else{
+            message.textContent="form submitted successfully"
+            message.style.color="green"
+            return
+
+        }
+    })
+
+      </script>
+
+    </form>
+    
+</body>
+</html>

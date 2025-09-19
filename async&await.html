@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async&await</title>
+</head>
+<body>
+    <h2>async&await</h2>
+    <script>
+        //resolve
+       let p1 = new Promise((resolve,reject)=>{        //by using new keyword we will declare promises
+                setTimeout(()=>
+                {  console.log("db call successful")
+                    resolve(25),5000}) })     //5000ms=5sec
+                       
+     //reject
+        let p2 = new Promise((resolve,reject)=>{        //by using new keyword we will declare promises
+                setTimeout(()=>
+                {  
+                    console.log("db call not successful")
+                    reject(new Error("db backend failure")),5000}) 
+                })     //5000ms=5sec
+                
+        async function dbcall() {
+            try{
+                let response= await p1
+                console.log(response)
+            }
+           
+            catch(error){
+              console.log(error)
+            }
+            
+        } 
+        dbcall()          //calling function
+        console.log(p1)
+    </script>
+</body>
+</html>
